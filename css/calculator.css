@@ -1,3 +1,16 @@
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --light-gray: #d8d9db;
+  --button-hover: #ebebeb;
+  --button-active: #bbbcbe;
+  --fn-button: #df974c;
+  --fn-button-hover: #dfb07e;
+  --fn-button-active: #dd8d37;
+  --grid-gap-size: 3px;
+  --font-size: 2.5rem;
+}
+
 html {
     box-sizing: border-box;
 }
@@ -7,7 +20,61 @@ html {
 body {
   padding: 0;
   margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .wrapper {
     width: 400px;
+    height: 510px;
+}
+
+section.screen {
+  height: 85px;
+  display: flex;
+  background-color: var(--black);
+}
+.current-value {
+  color: var(--white);
+  margin: auto 0.5rem auto auto;
+  font-size: var(--font-size);
+}
+
+section.calc-buttons {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: var(--grid-gap-size);
+  grid-row-gap: var(--grid-gap-size);
+  background-color: var(--black);
+}
+section.calc-buttons > button {
+  border: none;
+  font-size: var(--font-size);
+}
+section.calc-buttons > button:not([class="fn-button"]) {
+  background-color: var(--light-gray);
+}
+section.calc-buttons > button:not([class="fn-button"]):hover {
+  background-color: var(--button-hover);
+}
+section.calc-buttons > button:not([class="fn-button"]):active {
+  background-color: var(--button-active);
+}
+section.calc-buttons > button.fn-button {
+  background-color: var(--fn-button);
+  color: var(--white);
+}
+section.calc-buttons > button.fn-button:hover {
+  background-color: var(--fn-button-hover);
+}
+section.calc-buttons > button.fn-button:active {
+  background-color: var(--fn-button-active);
+}
+section.calc-buttons > .cancel {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+section.calc-buttons > .zero {
+  grid-column-start: 1;
+  grid-column-end: 4;
 }
