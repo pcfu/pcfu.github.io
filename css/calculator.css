@@ -30,7 +30,12 @@ body {
 section.screen {
   height: 85px;
   display: flex;
+  flex-direction: column;
   background-color: var(--black);
+}
+.tmp-value {
+  color: var(--white);
+  margin: 0.5rem 0.5rem 0 auto;
 }
 .current-value {
   color: var(--white);
